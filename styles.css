@@ -172,7 +172,7 @@
 
  #habilidades h3 {
    margin-top: 0;
-   color: #f472b6;;
+   color: #f472b6;
  }
 
  #habilidades p:last-child {
@@ -219,13 +219,13 @@
  input:focus,
  select:focus {
    outline: none;
-   border-color: #e94560;
+   border-color: #db2777;
  }
 
  button {
    display: inline-block;
    padding: 12px 32px;
-   background: #e94560;
+   background: #db2777;
    border: none;
    border-radius: 6px;
    color: #fff;
@@ -234,7 +234,7 @@
  }
 
  button:hover {
-   background: #ff6b81;
+   background: #f472b6;
  }
 
  /* =====================
@@ -242,7 +242,7 @@
 ===================== */
  footer {
    background: #020617;
-   border-top: 3px solid #e94560;
+   border-top: 3px solid #db2777;
    text-align: center;
    padding: 24px;
    font-size: 0.85rem;
@@ -251,4 +251,19 @@
  
 html {
   scroll-behavior: smooth;
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  background: #1e293b;
+  color: #f472b6;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid #db2777;
 }

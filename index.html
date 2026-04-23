@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +28,7 @@
 
     <!-- Sección personaje -->
     <section id="personaje">
-      <img
-        src="https://picsum.photos/seed/zara/120/120"
-        alt="Retrato del personaje Zara Darkbane"
-        class="avatar"
-      >
+      <img src="https://picsum.photos/seed/zara/120/120" alt="Retrato del personaje Zara Darkbane" class="avatar">
 
       <h1>Zara Darkbane</h1>
       <p class="class-badge">Hechicera</p>
@@ -85,54 +82,73 @@
 
       <article>
         <h3>Bola de Fuego</h3>
-        <p>Lanza una esfera de fuego puro que explota al impacto, causando daño en área.</p>
+
+        <div class="tags">
+          <span>Fuego</span>
+          <span>Daño</span>
+          <span>Área</span>
+        </div>
+
+        <p>Lanza una esfera de fuego puro que explota al impacto.</p>
         <p>Costo: 30 de mana</p>
       </article>
 
+
       <article>
         <h3>Escudo de Hielo</h3>
+
+        <div class="tags">
+          <span>Hielo</span>
+          <span>Defensa</span>
+          <span>Barrera</span>
+        </div>
+
         <p>Crea una barrera de cristal helado que absorbe el siguiente golpe recibido.</p>
         <p>Costo: 20 de mana</p>
       </article>
 
       <article>
         <h3>Rayo Carmesí</h3>
+        <div class="tags">
+          <span>Oscuro</span>
+          <span>Daño</span>
+          <span>Control</span>
+        </div>
         <p>
           Canaliza energía arcana oscura y dispara un rayo que atraviesa cualquier escudo.
           Aturde al objetivo durante 2 turnos.
         </p>
         <p>Costo: 50 de mana</p>
       </article>
-    </section>
 
-    <!-- Sección desafío -->
-    <section id="desafio">
-      <h2>¿Te animás a desafiarla?</h2>
+      <!-- Sección desafío -->
+      <section id="desafio">
+        <h2>¿Te animás a desafiarla?</h2>
 
-      <p>
-        Registrá tu personaje para enfrentarte a Zara Darkbane en el próximo torneo.
-        Solo los más valientes (o los más locos) se atreven.
-      </p>
+        <p>
+          Registrá tu personaje para enfrentarte a Zara Darkbane en el próximo torneo.
+          Solo los más valientes (o los más locos) se atreven.
+        </p>
 
-      <form>
-        <label for="challenger-name">Nombre del personaje</label>
-        <input type="text" id="challenger-name" name="challenger-name">
+        <form>
+          <label for="challenger-name">Nombre del personaje</label>
+          <input type="text" id="challenger-name" name="challenger-name">
 
-        <label for="challenger-class">Clase</label>
-        <input type="text" id="challenger-class" name="challenger-class">
+          <label for="challenger-class">Clase</label>
+          <input type="text" id="challenger-class" name="challenger-class">
 
-        <label for="challenger-level">Nivel</label>
-        <select id="challenger-level" name="challenger-level">
-          <option value="">Seleccioná tu nivel</option>
-          <option value="1">Nivel 1 – 3</option>
-          <option value="4">Nivel 4 – 6</option>
-          <option value="7">Nivel 7 – 9</option>
-          <option value="10">Nivel 10+</option>
-        </select>
+          <label for="challenger-level">Nivel</label>
+          <select id="challenger-level" name="challenger-level">
+            <option value="">Seleccioná tu nivel</option>
+            <option value="1">Nivel 1 – 3</option>
+            <option value="4">Nivel 4 – 6</option>
+            <option value="7">Nivel 7 – 9</option>
+            <option value="10">Nivel 10+</option>
+          </select>
 
-        <button type="submit">Inscribirme al torneo</button>
-      </form>
-    </section>
+          <button type="submit">Inscribirme al torneo</button>
+        </form>
+      </section>
 
   </main>
 
@@ -145,4 +161,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
