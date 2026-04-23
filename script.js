@@ -1,54 +1,78 @@
 // =====================
-// VARIABLES DEL PERSONAJE
+// CONSTANTES DEL PERSONAJE
 // =====================
+const CHARACTER_NAME = "Zara Darkbane";
+const CHARACTER_CLASS = "Hechicera";
 
-const name = "Zara Darkbane";
-const characterClass = "Hechicera";
-const level = 7;
+const INITIAL_LEVEL = 7;
+const INITIAL_HEALTH = 80;
+const INITIAL_MANA = 120;
 
-let health = 80;
-let mana = 120;
+const BASE_ATTACK = 45;
+const BASE_DEFENSE = 30;
 
-const attack = 45;
-const defense = 30;
+// =====================
+// ESTADO DEL PERSONAJE
+// =====================
+const characterLevel = INITIAL_LEVEL;
+let currentHealth = INITIAL_HEALTH;
+let currentMana = INITIAL_MANA;
+
+const attackPower = BASE_ATTACK;
+const defensePower = BASE_DEFENSE;
 
 // =====================
 // FUNCIONES
 // =====================
 
 // Función declarada
-function calculateDamage(attack, defense) {
-    const damage = attack - defense;
-    return damage > 0 ? damage : 0;
+function calculateDamage(attackValue, defenseValue) {
+  const damageResult = attackValue - defenseValue;
+  return damageResult > 0 ? damageResult : 0;
 }
 
 // Arrow function
-const isAlive = (health) => {
-    return health > 0;
+const isAlive = (healthValue) => {
+  return healthValue > 0;
 };
 
 // Arrow function
-const canCastSpell = (currentMana, spellCost, isStunned) => {
-    return currentMana >= spellCost && !isStunned;
+const canCastSpell = (manaAvailable, spellManaCost, characterStunned) => {
+  return manaAvailable >= spellManaCost && !characterStunned;
 };
 
 // Función declarada
-function getPresentation(name, characterClass, level) {
-    return `${name} — ${characterClass} (Nivel ${level})`;
+function getPresentation(characterName, characterClass, levelValue) {
+  return `${characterName} — ${characterClass} (Nivel ${levelValue})`;
 }
 
 // =====================
 // RESULTADOS
 // =====================
+const enemyDefense = defensePower;
+const SPELL_MANA_COST = 30;
+const CHARACTER_STUNNED = false;
 
-const enemyDefense = defense;
-const spellCost = 30;
-const isStunned = false;
-
-console.log("Daño causado:", calculateDamage(attack, enemyDefense));
-console.log("¿El personaje sigue vivo?:", isAlive(health));
 console.log(
-    "¿Puede lanzar hechizo?:",
-    canCastSpell(mana, spellCost, isStunned)
+  "Daño causado:",
+  calculateDamage(attackPower, enemyDefense)
 );
-console.log("Presentación:", getPresentation(name, characterClass, level));
+
+console.log(
+  "¿El personaje sigue vivo?:",
+  isAlive(currentHealth)
+);
+
+console.log(
+  "¿Puede lanzar hechizo?:",
+  canCastSpell(currentMana, SPELL_MANA_COST, CHARACTER_STUNNED)
+);
+
+console.log(
+  "Presentación:",
+  getPresentation(
+    CHARACTER_NAME,
+    CHARACTER_CLASS,
+    characterLevel
+  )
+);
