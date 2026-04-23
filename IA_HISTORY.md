@@ -26,29 +26,27 @@
 
 ```
 <!--
-  Indicá en qué punto del examen usaste este prompt.
-  No es sobre la hora exacta — es sobre el contexto: ¿qué estabas intentando resolver cuando recurriste a la IA?
-  Ej: "Cuando no sabía cómo estructurar el layout con Grid."
-  Ej: "Al terminar el HTML, para verificar si me faltaba algo de accesibilidad."
-  Ej: "Al principio del ejercicio de JS, para entender cómo arrancar."
+Cuando ya había terminado el HTML y separé los estilos en un archivo CSS externo, pero al aplicar estilos no se reflejaban cambios en el navegador.
 -->
 ```
 
 ### Lo que le pedí a la IA
 
 ```
-<!-- Pegá aquí el prompt exacto que escribiste. Debe ser el texto que vos escribiste, no la respuesta. -->
+<!-- Tengo un archivo HTML y moví todos los estilos que estaban dentro de la etiqueta <style> a un archivo externo styles.css.
+El problema es que los cambios de CSS no se aplican en el navegador.
+¿Podés revisar conceptualmente qué cosas debería verificar en el HTML para asegurar que el archivo CSS esté correctamente vinculado?
+Indicame errores comunes y cómo detectarlos usando el navegador. -->
 ```
 
 ### Análisis del resultado obtenido
 
 ```
 <!--
-  Describí con tus propias palabras qué generó la IA. No copies el código ni la respuesta — analizála.
-  Mínimo 3 oraciones. Respondé:
-  - ¿Qué enfoque tomó la IA para resolver el problema?
-  - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
-  - ¿Qué parte te resultó útil como punto de partida?
+La IA respondió listando los pasos básicos para vincular correctamente un archivo CSS externo, haciendo foco en la etiqueta <link> dentro del <head>.
+Explicó que sin esa referencia el navegador no puede interpretar los estilos, aunque el archivo CSS esté bien escrito.
+El enfoque fue correcto porque no se centró en el CSS en sí, sino en la relación entre HTML y CSS, lo cual era el origen real del problema.
+Me resultó útil como guía para revisar la estructura general del documento y entender por qué visualmente no había ningún cambio.
 -->
 ```
 
@@ -56,13 +54,10 @@
 
 ```
 <!--
-  Esta sección es la más importante. Sé específico/a. Mínimo 3 oraciones.
-  Respondé:
-  - ¿Qué error concreto tenía el resultado? (semántico, de accesibilidad, lógico, de estilo, etc.)
-  - ¿Cómo lo detectaste? (al probarlo en el browser, al leer el código, al ver la consola...)
-  - ¿Por qué estaba técnicamente incorrecto o insuficiente?
-  - ¿Qué cambiaste exactamente para que funcionara bien?
-  Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
+El error concreto era de tipo lógico y estructural: el archivo CSS no estaba vinculado al HTML mediante una etiqueta <link>.
+Lo detecté al revisar el <head> del HTML y comprobar que no existía ninguna referencia al archivo styles.css.
+Técnicamente era incorrecto porque el navegador no carga hojas de estilo externas de forma automática; siempre deben declararse explícitamente.
+Corregí el problema agregando la etiqueta styles.css en el <head>, y a partir de eso los estilos comenzaron a aplicarse correctamente.
 -->
 ```
 
@@ -74,29 +69,26 @@
 
 ```
 <!--
-  Indicá en qué punto del examen usaste este prompt.
-  No es sobre la hora exacta — es sobre el contexto: ¿qué estabas intentando resolver cuando recurriste a la IA?
-  Ej: "Cuando no sabía cómo estructurar el layout con Grid."
-  Ej: "Al terminar el HTML, para verificar si me faltaba algo de accesibilidad."
-  Ej: "Al principio del ejercicio de JS, para entender cómo arrancar."
+Cuando ya tenía la navegación armada y quería que la navbar quedara visible al hacer scroll, pero la IA insistía en soluciones con JavaScript cuando yo sabía que podía resolverse solo con CSS.
 -->
 ```
 
 ### Lo que le pedí a la IA
 
 ```
-<!-- Pegá aquí el prompt exacto que escribiste. Debe ser el texto que vos escribiste, no la respuesta. -->
+<!--Quiero que la barra de navegación quede fija en la parte superior de la pantalla al hacer scroll.
+¿Podés decirme qué opciones existen para lograrlo y si es necesario usar JavaScript,
+o si puede resolverse únicamente con CSS?-->
 ```
 
 ### Análisis del resultado obtenido
 
 ```
 <!--
-  Describí con tus propias palabras qué generó la IA. No copies el código ni la respuesta — analizála.
-  Mínimo 3 oraciones. Respondé:
-  - ¿Qué enfoque tomó la IA para resolver el problema?
-  - ¿El resultado era lo que esperabas? ¿Por qué sí o por qué no?
-  - ¿Qué parte te resultó útil como punto de partida?
+La IA propuso soluciones basadas principalmente en JavaScript, como detectar el scroll de la página y aplicar clases dinámicamente a la navegación.
+El enfoque no era el que esperaba porque el problema era puramente visual y de posicionamiento, algo que CSS puede resolver sin lógica adicional.
+Si bien la explicación técnica era válida, resultaba innecesariamente compleja para el objetivo del ejercicio.
+Lo útil fue confirmar que el comportamiento buscado estaba bien definido, aunque la herramienta no eligió la solución más simple.
 -->
 ```
 
@@ -104,13 +96,10 @@
 
 ```
 <!--
-  Esta sección es la más importante. Sé específico/a. Mínimo 3 oraciones.
-  Respondé:
-  - ¿Qué error concreto tenía el resultado? (semántico, de accesibilidad, lógico, de estilo, etc.)
-  - ¿Cómo lo detectaste? (al probarlo en el browser, al leer el código, al ver la consola...)
-  - ¿Por qué estaba técnicamente incorrecto o insuficiente?
-  - ¿Qué cambiaste exactamente para que funcionara bien?
-  Si no corregiste nada, explicá por qué el resultado era correcto tal como estaba.
+El error principal fue conceptual: la IA asumió que era obligatorio usar JavaScript para fijar la barra de navegación.
+Detecté esto porque ya había implementado comportamientos similares anteriormente solo con CSS, y además la consigna no requería interacción dinámica.
+Desde el punto de vista técnico, usar JS era innecesario y aumentaba la complejidad del código sin aportar beneficios reales.
+Corregí esto investigando por mi cuenta y apliqué position: sticky junto con top: 0 en la navbar, logrando que se mantuviera visible durante el scroll de forma simple y correcta.
 -->
 ```
 
@@ -120,9 +109,9 @@
 
 ```
 <!--
-  Mínimo 3 oraciones. Respondé:
-  - ¿Qué tipo de errores repitió la IA que tuviste que corregir?
-  - ¿Hubo algo que la IA resolvió bien a la primera sin que necesitaras tocarlo?
-  - ¿Cambiarías la forma en que le pedís cosas a la IA la próxima vez? ¿Por qué?
+El error principal fue conceptual: la IA asumió que era obligatorio usar JavaScript para fijar la barra de navegación.
+Detecté esto porque ya había implementado comportamientos similares anteriormente solo con CSS, y además la consigna no requería interacción dinámica.
+Desde el punto de vista técnico, usar JS era innecesario y aumentaba la complejidad del código sin aportar beneficios reales.
+Corregí esto investigando por mi cuenta y apliqué position: sticky junto con top: 0 en la navbar, logrando que se mantuviera visible durante el scroll de forma simple y correcta.
 -->
 ```
